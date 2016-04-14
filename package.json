@@ -1,0 +1,28 @@
+{
+  "name": "dinger",
+  "version": "1.0.0",
+  "description": "Microservice for playing a sound on webhook event.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests here\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/one19/dinger.git"
+  },
+  "keywords": [
+    "sound",
+    "node",
+    "webhook"
+  ],
+  "author": "Drew Showalter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/one19/dinger/issues"
+  },
+  "homepage": "https://github.com/one19/dinger#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "sfx": "^0.1.1"
+  }
+}
