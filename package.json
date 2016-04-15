@@ -4,6 +4,7 @@
   "description": "Microservice for playing a sound on webhook event.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"No tests here\""
   },
   "repository": {
