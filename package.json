@@ -24,6 +24,8 @@
   "homepage": "https://github.com/one19/dinger#readme",
   "dependencies": {
     "express": "^4.13.4",
+    "jquery": "^2.2.3",
+    "jsdom": "^8.4.0",
     "sfx": "^0.1.1"
   }
 }
