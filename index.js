@@ -40,6 +40,7 @@ app.get(['/', '/card'], function (req, res) {
   res.send(200)
 });
 
-var server = app.listen(3002, function() {
-  console.log('Server running at http://localhost:' + server.address().port)
+var port = process.env.PORT || 3000;
+var server = app.listen(port, function() {
+  console.log('Server running at http://localhost:' + port)
 });
