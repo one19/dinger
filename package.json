@@ -4,7 +4,7 @@
   "description": "Microservice for playing a sound on webhook event.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nf start",
     "test": "echo \"No tests here\""
   },
   "repository": {
@@ -24,8 +24,8 @@
   "homepage": "https://github.com/one19/dinger#readme",
   "dependencies": {
     "express": "^4.13.4",
-    "jquery": "^2.2.3",
-    "jsdom": "^8.4.0",
+    "foreman": "^1.4.1",
+    "request": "^2.72.0",
     "sfx": "^0.1.1"
   }
 }
