@@ -5,7 +5,6 @@ var sfx = require('sfx');
 var app = express();
 var token = process.env.TOKEN;
 var key = process.env.KEY;
-console.log('key',key, 'token',token)
 
 request
   .get("https://api.trello.com/1/tokens/" + token
@@ -27,7 +26,7 @@ request
         },
         function(error, res, body) {
           if (error) console.log("Error2: ", error);
-          console.log("Yay response: ", res);
+          console.log("Yay response: ", body);
         });
       }
   });
