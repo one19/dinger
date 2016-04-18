@@ -36,7 +36,7 @@ app.post('/card', function (req, res) {
   res.send(200)
 });
 
-app.get('/', function (req, res) {
+app.get(['/', '/card'], function (req, res) {
   res.send(200)
 });
 
