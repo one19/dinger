@@ -10,7 +10,7 @@ request
   .get("https://api.trello.com/1/tokens/" + token
     + "/webhooks/?key="+ key, function (error, res, body) {
       if (error) console.log("Error1: ", error);
-      if (JSON.parse(body).length === 0) {
+      if (JSON.parse(body).length <= 1) {
       request
         .post(
         {
@@ -29,6 +29,8 @@ request
           console.log("Yay response: ", body);
         });
       }
+  }).catch(function(err) {
+    console.log('err', err);
   });
 
 app.post('/card', function (req, res) {
