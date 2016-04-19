@@ -17,7 +17,7 @@ request
           url: "https://api.trello.com/1/webhooks?key=" + key + "&token=" + token,
           formData: {
               description: "Listen for cards webhook.",
-              callbackURL: "http://dcding.heroku.com/card",
+              callbackURL: "http://dcding.herokuapp.com/card",
               idModel: "56aad7ebfe2e61b85876235f"
           },
           headers: {
