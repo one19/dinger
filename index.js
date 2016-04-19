@@ -33,7 +33,7 @@ request
 
 app.post('/card', function (req, res) {
   sfx.play("Submarine");
-  res.send(200)
+  res.send(200, JSON.stringify([req, res]))
 });
 
 app.get(['/', '/card'], function (req, res) {
