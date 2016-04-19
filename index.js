@@ -32,6 +32,7 @@ request
   });
 
 app.post('/card', function (req, res) {
+  console.log(req, res)
   sfx.play("Submarine");
   res.send(200, JSON.stringify([req, res]))
 });
