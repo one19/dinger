@@ -17,7 +17,6 @@ app.use(express.static(__dirname + '/public'));
 request
   .get("https://api.trello.com/1/tokens/" + token
     + "/webhooks/?key="+ key, function (error, res, body) {
-      console.log(body);
       if (error) console.log("Error1: ", error);
       if (JSON.parse(body).length <= 1) {
       request
@@ -48,7 +47,7 @@ app.post('/card', function (req, res) {
 });
 
 app.get('/update-stream', function(req, res) {
-  // let request last as long as possible
+  // let request last as long as possible, roughly 24 days
   req.socket.setTimeout(0x7FFFFFFF);
 
   var messageCount = 0;
