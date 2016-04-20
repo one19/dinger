@@ -7,14 +7,12 @@ var port = process.env.PORT || 3000;
 var redisURL = process.env.REDIS_URL;
 var token = process.env.TOKEN;
 var key = process.env.KEY;
-console.log(JSON.stringify(redisURL));
 
 var app = express();
 var publisherClient = redis.createClient(redisURL, {no_ready_check: true});
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
 app.use(express.static(__dirname + '/public'));
-
 
 request
   .get("https://api.trello.com/1/tokens/" + token
@@ -54,7 +52,7 @@ app.get('/update-stream', function(req, res) {
   req.socket.setTimeout(0x7FFFFFFF);
 
   var messageCount = 0;
-  var subscriber = redis.createClient();
+  var subscriber = redis.createClient(redisURL, {no_ready_check: true});
 
   subscriber.subscribe("updates");
 
