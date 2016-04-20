@@ -2,6 +2,7 @@ var express = require('express');
 var request = require('request');
 var sfx = require('sfx');
 var redis = require('redis');
+var bodyParser = require('body-parser');
 
 var port = process.env.PORT || 3000;
 var redisURL = process.env.REDIS_URL;
@@ -13,6 +14,7 @@ var publisherClient = redis.createClient(redisURL, {no_ready_check: true});
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
 app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json())
 
 request
   .get("https://api.trello.com/1/tokens/" + token
@@ -40,8 +42,8 @@ request
   });
 
 app.post('/card', function (req, res) {
-  console.log(req)
-  publisherClient.publish( 'updates', ('"' + JSON.stringify(req.params) + '" card made') );
+  console.log(req.body);
+  publisherClient.publish( 'updates', ('"' + JSON.stringify(req.body) + '" card made') );
   res.writeHead(200, {'Content-Type': 'text/html'});
   res.write('All clients have received "' + req.params + '"');
   res.end();

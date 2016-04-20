@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/one19/dinger#readme",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "foreman": "^1.4.1",
     "pug": "^0.1.0",
