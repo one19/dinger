@@ -10,7 +10,6 @@ var key = process.env.KEY;
 
 var app = express();
 var publisherClient = redis.createClient(redisURL.port, redisURL.hostname, {no_ready_check: true});
-publisherClient.auth(redisURL.auth.split(":")[1]);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
 app.use(express.static(__dirname + '/public'));
