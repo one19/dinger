@@ -25,6 +25,8 @@
   "dependencies": {
     "express": "^4.13.4",
     "foreman": "^1.4.1",
+    "pug": "^0.1.0",
+    "redis": "^2.5.3",
     "request": "^2.72.0",
     "sfx": "^0.1.1"
   }
