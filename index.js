@@ -40,7 +40,8 @@ request
   });
 
 app.post('/card', function (req, res) {
-  publisherClient.publish( 'updates', ('"' + res + '" card made') );
+  console.log(req)
+  publisherClient.publish( 'updates', ('"' + JSON.stringify(req.params) + '" card made') );
   res.writeHead(200, {'Content-Type': 'text/html'});
   res.write('All clients have received "' + req.params + '"');
   res.end();
