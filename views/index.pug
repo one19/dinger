@@ -9,6 +9,7 @@ body
     var source = new EventSource('/update-stream');
 
     source.addEventListener('message', function(e) {
+      window.e = e;
       console.log(e);
       $('body').append('<audio controls autoplay class="audio"><source src="siren.mp3" type="audio/mpeg"></audio>');
       setTimeout(function(){ $(".audio").remove(); }, 1500);
