@@ -7,6 +7,7 @@ var port = process.env.PORT || 3000;
 var redisURL = process.env.REDIS_URL;
 var token = process.env.TOKEN;
 var key = process.env.KEY;
+console.log(JSON.stringify(redisURL));
 
 var app = express();
 var publisherClient = redis.createClient(redisURL, {no_ready_check: true});
