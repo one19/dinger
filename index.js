@@ -9,7 +9,7 @@ var token = process.env.TOKEN;
 var key = process.env.KEY;
 
 var app = express();
-var publisherClient = redis.createClient(redisURL.port, redisURL.hostname, {no_ready_check: true});
+var publisherClient = redis.createClient(redisURL {no_ready_check: true});
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
 app.use(express.static(__dirname + '/public'));
