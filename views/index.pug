@@ -10,6 +10,7 @@ body
 
     source.addEventListener('message', function(e) {
       if (e.data.match(/createCard/ig)) {
+        console.log('CreatedCard', e.data)
         $('body').append('<audio controls autoplay class="audio"><source src="siren.mp3" type="audio/mpeg"></audio>');
         setTimeout(function(){ $(".audio").remove(); }, 1500);
       }
